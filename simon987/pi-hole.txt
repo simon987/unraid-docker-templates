@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Pi-hole</Name>
+  <Repository>pihole/pihole</Repository>
+  <Registry/>
+  <Network>br0</Network>
+  <MyIP>192.168.1.190</MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://192.168.1.190/admin/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/simon987/unraid-docker-templates/master/icons/pi-hole.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1603904081</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>53</HostPort>
+        <ContainerPort>53</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>53</HostPort>
+        <ContainerPort>53</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/main/config/pihole</HostDir>
+      <ContainerDir>/etc/pihole/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/main/config/dnsmasq/</HostDir>
+      <ContainerDir>/etc/dnsmasq.d/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>America/Toronto</Value>
+      <Name>TZ</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>changeme</Value>
+      <Name>WEBPASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="config" Target="/etc/pihole/" Default="" Mode="rw" Description="Container Path: /etc/pihole/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/pihole</Config>
+  <Config Name="dnsmasq" Target="/etc/dnsmasq.d/" Default="" Mode="rw" Description="Container Path: /etc/dnsmasq.d/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/dnsmasq/</Config>
+  <Config Name="53_tcp" Target="53" Default="" Mode="tcp" Description="Container Port: 53" Type="Port" Display="always" Required="false" Mask="false">53</Config>
+  <Config Name="53_udp" Target="53" Default="" Mode="udp" Description="Container Port: 53" Type="Port" Display="always" Required="false" Mask="false">53</Config>
+  <Config Name="80_tcp" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="TZ" Target="TZ" Default="" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">America/Toronto</Config>
+  <Config Name="WEBPASSWORD" Target="WEBPASSWORD" Default="" Mode="" Description="Container Variable: WEBPASSWORD" Type="Variable" Display="always" Required="false" Mask="false">changeme</Config>
+</Container>
+
