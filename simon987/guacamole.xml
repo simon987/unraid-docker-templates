@@ -34,13 +34,13 @@
   <Data>
     <Volume>
       <HostDir>/mnt/user/main/config/guacamole/</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <ContainerDir>/config/</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment/>
   <Labels/>
   <Config Name="Host Port 1" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
-  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/guacamole/</Config>
+  <Config Name="Config" Target="/config/" Default="" Mode="rw" Description="Container Path: /config/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/guacamole/</Config>
 </Container>
 
