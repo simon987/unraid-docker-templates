@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gitea</Name>
+  <Repository>gitea/gitea</Repository>
+  <Registry/>
+  <Network>db-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://192.168.1.180:10080/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/simon987/unraid-docker-templates/master/icons/gitea.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1604080371</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>db-net</Mode>
+    <Publish>
+      <Port>
+        <HostPort>10080</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>10022</HostPort>
+        <ContainerPort>22</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/main/config/gitea</HostDir>
+      <ContainerDir>/data/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>USER_UID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>USER_GID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>postgres</Value>
+      <Name>DB_TYPE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>postgres:5432</Value>
+      <Name>DB_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>gitea</Value>
+      <Name>DB_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>gitea</Value>
+      <Name>DB_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>changeme</Value>
+      <Name>DB_PASSWD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="/data/" Target="/data/" Default="" Mode="rw" Description="Container Path: /data/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/gitea</Config>
+  <Config Name="USER_UID" Target="USER_UID" Default="" Mode="" Description="Container Variable: USER_UID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="USER_GID" Target="USER_GID" Default="" Mode="" Description="Container Variable: USER_GID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="3000_tcp" Target="3000" Default="" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">10080</Config>
+  <Config Name="22_tcp" Target="22" Default="" Mode="tcp" Description="Container Port: 22" Type="Port" Display="always" Required="false" Mask="false">10022</Config>
+  <Config Name="DB_TYPE" Target="DB_TYPE" Default="" Mode="" Description="Container Variable: DB_TYPE" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
+  <Config Name="DB_HOST" Target="DB_HOST" Default="" Mode="" Description="Container Variable: DB_HOST" Type="Variable" Display="always" Required="false" Mask="false">postgres:5432</Config>
+  <Config Name="DB_NAME" Target="DB_NAME" Default="" Mode="" Description="Container Variable: DB_NAME" Type="Variable" Display="always" Required="false" Mask="false">gitea</Config>
+  <Config Name="DB_USER" Target="DB_USER" Default="" Mode="" Description="Container Variable: DB_USER" Type="Variable" Display="always" Required="false" Mask="false">gitea</Config>
+  <Config Name="DB_PASSWD" Target="DB_PASSWD" Default="" Mode="" Description="Container Variable: DB_PASSWD" Type="Variable" Display="always" Required="false" Mask="false">changeme</Config>
+</Container>
+
