@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Wiki.js</Name>
+  <Repository>requarks/wiki:2</Repository>
+  <Registry/>
+  <Network>db-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://192.168.1.180:11080/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/simon987/unraid-docker-templates/master/icons/wikijs.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1604081625</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>db-net</Mode>
+    <Publish>
+      <Port>
+        <HostPort>11080</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data/>
+  <Environment>
+    <Variable>
+      <Value>postgres</Value>
+      <Name>DB_TYPE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>postgres</Value>
+      <Name>DB_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>5432</Value>
+      <Name>DB_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>wikijs</Value>
+      <Name>DB_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>changme</Value>
+      <Name>DB_PASS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>wikijs</Value>
+      <Name>DB_NAME</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="DB_TYPE" Target="DB_TYPE" Default="" Mode="" Description="Container Variable: DB_TYPE" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
+  <Config Name="DB_HOST" Target="DB_HOST" Default="" Mode="" Description="Container Variable: DB_HOST" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
+  <Config Name="DB_PORT" Target="DB_PORT" Default="" Mode="" Description="Container Variable: DB_PORT" Type="Variable" Display="always" Required="false" Mask="false">5432</Config>
+  <Config Name="DB_USER" Target="DB_USER" Default="" Mode="" Description="Container Variable: DB_USER" Type="Variable" Display="always" Required="false" Mask="false">wikijs</Config>
+  <Config Name="DB_PASS" Target="DB_PASS" Default="" Mode="" Description="Container Variable: DB_PASS" Type="Variable" Display="always" Required="false" Mask="false">changme</Config>
+  <Config Name="DB_NAME" Target="DB_NAME" Default="" Mode="" Description="Container Variable: DB_NAME" Type="Variable" Display="always" Required="false" Mask="false">wikijs</Config>
+  <Config Name="3000_tcp" Target="3000" Default="" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">11080</Config>
+</Container>
+
