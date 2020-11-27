@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>foldingathome</Name>
+  <Repository>ghcr.io/linuxserver/foldingathome</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/simon987/unraid-docker-templates/master/icons/foldingathome.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>0,1,2,3</CPUset>
+  <DateInstalled>1606487603</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7396</HostPort>
+        <ContainerPort>7396</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/main/config/foldingathome/</HostDir>
+      <ContainerDir>/config/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="7396_tcp" Target="7396" Default="" Mode="tcp" Description="Container Port: 7396" Type="Port" Display="always" Required="false" Mask="false">7396</Config>
+  <Config Name="/config" Target="/config/" Default="" Mode="rw" Description="Container Path: /config/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/foldingathome/</Config>
+</Container>

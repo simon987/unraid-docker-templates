@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>teamcity-server</Name>
+  <Repository>jetbrains/teamcity-server</Repository>
+  <Registry/>
+  <Network>db-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://192.168.1.180:8111</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/simon987/unraid-docker-templates/master/icons/teamcity.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1605374644</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>db-net</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8111</HostPort>
+        <ContainerPort>8111</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/main/config/teamcity-server/data/</HostDir>
+      <ContainerDir>/data/teamcity_server/datadir/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/main/config/teamcity-server/logs/</HostDir>
+      <ContainerDir>/opt/teamcity/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>-Xms1G -Xmx1G -XX:MaxPermSize=270m</Value>
+      <Name>TEAMCITY_SERVER_MEM_OPTS</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="TEAMCITY_SERVER_MEM_OPTS" Target="TEAMCITY_SERVER_MEM_OPTS" Default="" Mode="" Description="Container Variable: TEAMCITY_SERVER_MEM_OPTS" Type="Variable" Display="always" Required="false" Mask="false">-Xms1G -Xmx1G -XX:MaxPermSize=270m</Config>
+  <Config Name="/data/teamcity_server/datadir/" Target="/data/teamcity_server/datadir/" Default="" Mode="rw" Description="Container Path: /root/data/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/teamcity-server/data/</Config>
+  <Config Name="/opt/teamcity/logs" Target="/opt/teamcity/logs" Default="" Mode="rw" Description="Container Path: /root/logs/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/config/teamcity-server/logs/</Config>
+  <Config Name="8111_tcp" Target="8111" Default="" Mode="tcp" Description="Container Port: 8111" Type="Port" Display="always" Required="false" Mask="false">8111</Config>
+</Container>

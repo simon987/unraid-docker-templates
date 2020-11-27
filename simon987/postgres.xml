@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>postgres</Name>
+  <Repository>postgres:alpine</Repository>
+  <Registry/>
+  <Network>db-net</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/simon987/unraid-docker-templates/master/icons/postgres.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1604073618</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>db-net</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/main/dbdata/postgres/</HostDir>
+      <ContainerDir>/var/lib/postgresql/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>postgres</Value>
+      <Name>POSTGRES_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>changeme</Value>
+      <Name>POSTGRES_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Container Variable: POSTGRES_USER" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">changeme</Config>
+  <Config Name="/var/lib/postgresql/data/" Target="/var/lib/postgresql/data" Default="" Mode="rw" Description="Container Path: /var/lib/postgresql/data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/main/dbdata/postgres/</Config>
+</Container>
